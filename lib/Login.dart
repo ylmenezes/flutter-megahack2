@@ -24,13 +24,17 @@ class Login extends StatelessWidget {
                 ),
               ),
 
-              SingleChildScrollView(
-                padding: EdgeInsets.all(25.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children:<Widget>[
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child:  SingleChildScrollView(
+                  padding: EdgeInsets.all(25.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children:<Widget>[
 
-                    PageLink(
+                      PageLink(
                         links: [
                           PageLinkInfo(
                             transition: LinkTransition.Fade,
@@ -60,34 +64,44 @@ class Login extends StatelessWidget {
                         ),
                       ),
 
-                    PageLink(
-                      links: [
-                        PageLinkInfo(
-                          transition: LinkTransition.Fade,
-                          ease: Curves.easeOut,
-                          duration: 0.3,
-                          pageBuilder: () => Acesso(),
-                        ),
-                      ],
-                      child: Container(
-                        alignment: Alignment.center,
-                        margin: const EdgeInsets.only(top:10.0),
-                        child: Text(
-                          'Acessar conta',
-                          style: TextStyle(
-                            fontFamily: 'Segoe Print',
-                            fontSize: 20,
-                            color: const Color(0xff302f2f),
-                            fontWeight: FontWeight.w700,
+                      PageLink(
+                        links: [
+                          PageLinkInfo(
+                            transition: LinkTransition.Fade,
+                            ease: Curves.easeOut,
+                            duration: 0.3,
+                            pageBuilder: () => Acesso(),
                           ),
-                          textAlign: TextAlign.left,
+                        ],
+                        child: Container(
+                          height: 46.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50.0),
+                            border: Border.all(
+                                width: 1.0,
+                                color: const Color(0xffe0ef0f)
+                            )
+                          ),
+                          alignment: Alignment.center,
+                          margin: const EdgeInsets.only(top:10.0),
+                          child: Text(
+                            'Acessar conta',
+                            style: TextStyle(
+                              fontFamily: 'Segoe Print',
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
                         ),
                       ),
-                    ),
 
-                  ],
+                    ],
+                  ),
                 ),
               ),
+
           ]
       ),
     );

@@ -22,24 +22,62 @@ class Acesso extends StatelessWidget {
                     ),
                 ),
               ),
-      
-              SingleChildScrollView(
-                  padding: EdgeInsets.all(25.0),
-                  child: Container(
-                     child: Column(
+
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Container(
+                  height: MediaQuery.of(context).size.height / 2.5,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30.0),
+                      topRight: Radius.circular(30.0),
+                    )
+                  ),
+                  child: SingleChildScrollView(
+                    padding: EdgeInsets.all(25.0),
+                    child:  Column(
                       children: <Widget>[
+
                         TextField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                  borderSide: BorderSide(
-                                      width: 0, 
-                                      style: BorderStyle.none,
-                                  ),
+                          style: TextStyle(
+                              fontSize: 14,
+                              height: .5
+                          ),
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(50.0),
+                              borderSide: BorderSide(
+                                width: 1,
+                                style: BorderStyle.none,
                               ),
-                              labelText: 'E-mail',
                             ),
+                            labelText: 'E-mail',
+                          ),
                         ),
+
+                        SizedBox(height: 10,),
+
+                        TextField(
+                          style: TextStyle(
+                              fontSize: 14,
+                              height: .8
+                          ),
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(50.0),
+                              borderSide: BorderSide(
+                                width: 1,
+                                style: BorderStyle.none,
+                              ),
+                            ),
+                            labelText: 'Senha',
+                          ),
+                        ),
+
                         PageLink(
                           links: [
                             PageLinkInfo(
@@ -59,7 +97,7 @@ class Acesso extends StatelessWidget {
                               color: const Color(0xffe0ef0f),
                             ),
                             child: Text(
-                              'Entrar', 
+                              'Entrar',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: 20.0,
@@ -67,10 +105,12 @@ class Acesso extends StatelessWidget {
                             ),
                           ),
                         ),
+
                       ],
+                    ),
                   ),
-                  ),
-                 ),
+                ),
+              ),
           ]
       ),
     );
