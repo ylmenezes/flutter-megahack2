@@ -4,8 +4,7 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:megahack3/Sucesso.dart';
 
 class CadastroStep3 extends StatelessWidget {
-  bool checkBoxValue = true;
-
+  final checkBoxValue = true;
 
   @override
   Widget build(BuildContext context) {
@@ -15,56 +14,42 @@ class CadastroStep3 extends StatelessWidget {
         title: Text('Você prefere...'),
         backgroundColor: Colors.amber,
       ),
-
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
-
-            Row(
-                children: <Widget>[
-                  Checkbox(
-                    value: checkBoxValue,
-                    activeColor: Colors.green,
-                    onChanged: null,
-                  ),
-                  Text('Forncedor que atendam no prazo'),
-                ]
-            ),
-
-            Row(
-                children: <Widget>[
-                  Checkbox(
-                    value: checkBoxValue,
-                    activeColor: Colors.green,
-                    onChanged: null,
-                  ),
-                  Text('Qualidade no produto do fornecedor  '),
-                ]
-            ),
-
-            Row(
-                children: <Widget>[
-                  Checkbox(
-                    value: checkBoxValue,
-                    activeColor: Colors.green,
-                    onChanged: null,
-                  ),
-                  Text('Fornecedor com atendimento de excelência'),
-                ]
-            ),
-
-            Row(
-                children: <Widget>[
-                  Checkbox(
-                    value: checkBoxValue,
-                    activeColor: Colors.green,
-                    onChanged: null,
-                  ),
-                  Text('Melhor preço do mercado'),
-                ]
-            ),
-
+            Row(children: <Widget>[
+              Checkbox(
+                value: checkBoxValue,
+                activeColor: Colors.green,
+                onChanged: null,
+              ),
+              Text('Forncedores que atendam no prazo'),
+            ]),
+            Row(children: <Widget>[
+              Checkbox(
+                value: checkBoxValue,
+                activeColor: Colors.green,
+                onChanged: null,
+              ),
+              Text('Qualidade no produto do fornecedor'),
+            ]),
+            Row(children: <Widget>[
+              Checkbox(
+                value: checkBoxValue,
+                activeColor: Colors.green,
+                onChanged: null,
+              ),
+              Text('Fornecedor com atendimento de excelência'),
+            ]),
+            Row(children: <Widget>[
+              Checkbox(
+                value: checkBoxValue,
+                activeColor: Colors.green,
+                onChanged: null,
+              ),
+              Text('Melhor preço do mercado'),
+            ]),
             PageLink(
               links: [
                 PageLinkInfo(
@@ -80,18 +65,14 @@ class CadastroStep3 extends StatelessWidget {
                 height: 46.0,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50.0),
-                    color: Colors.amber
-                ),
+                    color: Colors.amber),
                 child: Text(
                   'Avançar',
-                  style: TextStyle(
-                      fontSize: 20
-                  ),
+                  style: TextStyle(fontSize: 20),
                   textAlign: TextAlign.center,
                 ),
               ),
             ),
-
           ],
         ),
       ),

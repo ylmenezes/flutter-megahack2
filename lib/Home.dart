@@ -14,7 +14,6 @@ class Home extends StatelessWidget {
         title: Text('Home'),
         backgroundColor: Colors.amber,
       ),
-
       body: Stack(
         children: <Widget>[
           Transform.translate(

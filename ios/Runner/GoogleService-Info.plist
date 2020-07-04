@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>662388656339-r5g13bi0ppqlfu2o6enh00l1dhiuoefe.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.662388656339-r5g13bi0ppqlfu2o6enh00l1dhiuoefe</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCbc_v6gSwoxnY4JXlVuOiReHVoeIqGYy0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>662388656339</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.com.yanmenezes.megahack3</string>
+	<key>PROJECT_ID</key>
+	<string>megahack3-54b59</string>
+	<key>STORAGE_BUCKET</key>
+	<string>megahack3-54b59.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:662388656339:ios:c741c8a5d101150b5e2c26</string>
+	<key>DATABASE_URL</key>
+	<string>https://megahack3-54b59.firebaseio.com</string>
+</dict>
+</plist>
