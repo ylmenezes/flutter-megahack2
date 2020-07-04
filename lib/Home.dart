@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:adobe_xd/page_link.dart';
-import './Login.dart';
 
 class Home extends StatelessWidget {
-  Home({
-    Key key,
-  }) : super(key: key);
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -465,52 +461,6 @@ class Home extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(9.0, 8.0),
-            child: PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.Fade,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => Login(),
-                ),
-              ],
-              child:
-                  // Adobe XD layer: 'Icon feather-arrow-…' (group)
-                  Stack(
-                children: <Widget>[
-                  Transform.translate(
-                    offset: Offset(3.0, 3.0),
-                    child: SvgPicture.string(
-                      _svg_t5w4zq,
-                      allowDrawingOutsideViewBox: true,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(293.0, 729.0),
-            child: Container(
-              width: 72.0,
-              height: 72.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.elliptical(36.0, 36.0)),
-                color: const Color(0xffe0ef0f),
-              ),
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(314.0, 750.0),
-            child:
-                // Adobe XD layer: 'Icon awesome-plus-c…' (shape)
-                SvgPicture.string(
-              _svg_fzvsms,
-              allowDrawingOutsideViewBox: true,
             ),
           ),
         ],

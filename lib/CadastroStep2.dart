@@ -12,6 +12,7 @@ class CadastroStep2 extends StatelessWidget {
   Widget build(BuildContext context) {
     final tiposCozinha =
         Provider.of<Globais>(context, listen: false).tiposCozinha;
+
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
