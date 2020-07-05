@@ -6,8 +6,7 @@ class TipoCozinhaDao {
 
   Future<List<TipoCozinhaModel>> readAll() async {
     var listaTiposCozinha = <TipoCozinhaModel>[];
-    var snapshots =
-        await _refTipoCozinha.getDocuments();
+    var snapshots = await _refTipoCozinha.getDocuments();
 
     snapshots.documents.forEach((element) {
       listaTiposCozinha.add(TipoCozinhaModel.fromFirestore(element));
@@ -15,5 +14,4 @@ class TipoCozinhaDao {
 
     return listaTiposCozinha;
   }
-
 }
