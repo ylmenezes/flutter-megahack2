@@ -15,14 +15,13 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    auth.getUser.then(
-          (user) {
-        if (user == null) {
-          Navigator.push(context, MaterialPageRoute(
+    auth.getUser.then((user){
+          if(user == null){
+            Navigator.push(context, MaterialPageRoute(
               builder: (BuildContext context) => Acesso()
-          ));
+            ));
+          }
         }
-      },
     );
   }
 
