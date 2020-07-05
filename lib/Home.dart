@@ -1,470 +1,494 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:megahack3/util/authentication.dart';
+import 'package:megahack3/widget/app_bottom.dart';
+import 'package:megahack3/Acesso.dart';
 
-class Home extends StatelessWidget {
- 
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  AuthService auth = new AuthService();
+
+  @override
+  void initState() {
+    super.initState();
+    auth.getUser.then(
+          (user) {
+        if (user == null) {
+          Navigator.push(context, MaterialPageRoute(
+              builder: (BuildContext context) => Acesso()
+          ));
+        }
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-        backgroundColor: Colors.amber,
-      ),
-      body: Stack(
-        children: <Widget>[
-          Transform.translate(
-            offset: Offset(215.75, 170.5),
-            child:
-                // Adobe XD layer: 'Line Chart0' (group)
-                Stack(
-              children: <Widget>[
-                Transform.translate(
-                  offset: Offset(-176.97, -89.5),
-                  child:
-                      // Adobe XD layer: 'Chart' (group)
-                      Stack(
-                    children: <Widget>[
-                      // Adobe XD layer: 'm1' (group)
-                      Stack(
-                        children: <Widget>[
-                          Transform.translate(
-                            offset: Offset(4.03, 4.03),
-                            child: SvgPicture.string(
-                              _svg_rh36hz,
-                              allowDrawingOutsideViewBox: true,
+        appBar: AppBar(
+          title: Text('Home'),
+          backgroundColor: Colors.amber,
+        ),
+        body: Stack(
+          children: <Widget>[
+            Transform.translate(
+              offset: Offset(215.75, 170.5),
+              child:
+              // Adobe XD layer: 'Line Chart0' (group)
+              Stack(
+                children: <Widget>[
+                  Transform.translate(
+                    offset: Offset(-176.97, -89.5),
+                    child:
+                    // Adobe XD layer: 'Chart' (group)
+                    Stack(
+                      children: <Widget>[
+                        // Adobe XD layer: 'm1' (group)
+                        Stack(
+                          children: <Widget>[
+                            Transform.translate(
+                              offset: Offset(4.03, 4.03),
+                              child: SvgPicture.string(
+                                _svg_rh36hz,
+                                allowDrawingOutsideViewBox: true,
+                              ),
                             ),
-                          ),
-                          // Adobe XD layer: 'Marks' (group)
-                          Stack(
-                            children: <Widget>[
-                              Transform.translate(
-                                offset: Offset(0.22, 109.0),
-                                child: Container(
-                                  width: 8.0,
-                                  height: 9.0,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.0, 4.5)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                            // Adobe XD layer: 'Marks' (group)
+                            Stack(
+                              children: <Widget>[
+                                Transform.translate(
+                                  offset: Offset(0.22, 109.0),
+                                  child: Container(
+                                    width: 8.0,
+                                    height: 9.0,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.0, 4.5)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Transform.translate(
-                                offset: Offset(25.03, 65.21),
-                                child: Container(
-                                  width: 8.1,
-                                  height: 8.1,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.03, 4.03)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                                Transform.translate(
+                                  offset: Offset(25.03, 65.21),
+                                  child: Container(
+                                    width: 8.1,
+                                    height: 8.1,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.03, 4.03)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Transform.translate(
-                                offset: Offset(50.06, 74.07),
-                                child: Container(
-                                  width: 8.1,
-                                  height: 8.1,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.03, 4.03)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                                Transform.translate(
+                                  offset: Offset(50.06, 74.07),
+                                  child: Container(
+                                    width: 8.1,
+                                    height: 8.1,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.03, 4.03)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Transform.translate(
-                                offset: Offset(75.09, 109.49),
-                                child: Container(
-                                  width: 8.1,
-                                  height: 8.1,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.03, 4.03)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                                Transform.translate(
+                                  offset: Offset(75.09, 109.49),
+                                  child: Container(
+                                    width: 8.1,
+                                    height: 8.1,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.03, 4.03)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Transform.translate(
-                                offset: Offset(100.12, 78.09),
-                                child: Container(
-                                  width: 8.1,
-                                  height: 8.1,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.03, 4.03)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                                Transform.translate(
+                                  offset: Offset(100.12, 78.09),
+                                  child: Container(
+                                    width: 8.1,
+                                    height: 8.1,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.03, 4.03)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Transform.translate(
-                                offset: Offset(125.15, 38.64),
-                                child: Container(
-                                  width: 8.1,
-                                  height: 8.1,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.03, 4.03)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                                Transform.translate(
+                                  offset: Offset(125.15, 38.64),
+                                  child: Container(
+                                    width: 8.1,
+                                    height: 8.1,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.03, 4.03)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Transform.translate(
-                                offset: Offset(150.19, 82.92),
-                                child: Container(
-                                  width: 8.1,
-                                  height: 8.1,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.03, 4.03)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                                Transform.translate(
+                                  offset: Offset(150.19, 82.92),
+                                  child: Container(
+                                    width: 8.1,
+                                    height: 8.1,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.03, 4.03)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Transform.translate(
-                                offset: Offset(175.22, 56.36),
-                                child: Container(
-                                  width: 8.1,
-                                  height: 8.1,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.03, 4.03)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                                Transform.translate(
+                                  offset: Offset(175.22, 56.36),
+                                  child: Container(
+                                    width: 8.1,
+                                    height: 8.1,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.03, 4.03)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Transform.translate(
-                                offset: Offset(200.25, 29.79),
-                                child: Container(
-                                  width: 8.1,
-                                  height: 8.1,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.03, 4.03)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                                Transform.translate(
+                                  offset: Offset(200.25, 29.79),
+                                  child: Container(
+                                    width: 8.1,
+                                    height: 8.1,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.03, 4.03)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Transform.translate(
-                                offset: Offset(225.28, 38.64),
-                                child: Container(
-                                  width: 8.1,
-                                  height: 8.1,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.03, 4.03)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                                Transform.translate(
+                                  offset: Offset(225.28, 38.64),
+                                  child: Container(
+                                    width: 8.1,
+                                    height: 8.1,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.03, 4.03)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Transform.translate(
-                                offset: Offset(250.31, 57.97),
-                                child: Container(
-                                  width: 8.1,
-                                  height: 8.1,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.03, 4.03)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                                Transform.translate(
+                                  offset: Offset(250.31, 57.97),
+                                  child: Container(
+                                    width: 8.1,
+                                    height: 8.1,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.03, 4.03)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Transform.translate(
-                                offset: Offset(275.22, 0.0),
-                                child: Container(
-                                  width: 8.0,
-                                  height: 8.0,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(4.0, 4.0)),
-                                    color: const Color(0xffffffff),
-                                    border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xff1f78b4)),
+                                Transform.translate(
+                                  offset: Offset(275.22, 0.0),
+                                  child: Container(
+                                    width: 8.0,
+                                    height: 8.0,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.elliptical(4.0, 4.0)),
+                                      color: const Color(0xffffffff),
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff1f78b4)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Transform.translate(
-                  offset: Offset(-172.95, 50.59),
-                  child:
-                      // Adobe XD layer: 'X Axis Line' (group)
-                      Stack(
-                    children: <Widget>[
-                      Transform.translate(
-                        offset: Offset(0.2, -0.09),
-                        child: SvgPicture.string(
-                          _svg_70baay,
-                          allowDrawingOutsideViewBox: true,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Transform.translate(
-                  offset: Offset(-181.0, 55.42),
-                  child:
-                      // Adobe XD layer: 'X Axis' (group)
-                      Stack(
-                    children: <Widget>[
-                      Transform.translate(
-                        offset: Offset(-1.75, 0.08),
-                        child: SizedBox(
-                          width: 20.0,
-                          child: Text(
-                            'Jan',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 10,
-                              color: const Color(0xff444444),
+                              ],
                             ),
-                            textAlign: TextAlign.center,
-                          ),
+                          ],
                         ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(23.03, 0.0),
-                        child: SizedBox(
-                          width: 20.0,
-                          child: Text(
-                            'Feb',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 9,
-                              color: const Color(0xff444444),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(48.06, 0.0),
-                        child: SizedBox(
-                          width: 20.0,
-                          child: Text(
-                            'Mar',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 9,
-                              color: const Color(0xff444444),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(73.9, 0.0),
-                        child: SizedBox(
-                          width: 18.0,
-                          child: Text(
-                            'Apr',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 9,
-                              color: const Color(0xff444444),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(97.32, 0.0),
-                        child: SizedBox(
-                          width: 20.0,
-                          child: Text(
-                            'May',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 8,
-                              color: const Color(0xff444444),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(123.15, 0.0),
-                        child: SizedBox(
-                          width: 20.0,
-                          child: Text(
-                            'Jun',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 10,
-                              color: const Color(0xff444444),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(149.8, 0.0),
-                        child: SizedBox(
-                          width: 16.0,
-                          child: Text(
-                            'Jul',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 10,
-                              color: const Color(0xff444444),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(172.41, 0.0),
-                        child: SizedBox(
-                          width: 20.0,
-                          child: Text(
-                            'Aug',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 9,
-                              color: const Color(0xff444444),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(197.44, 0.0),
-                        child: SizedBox(
-                          width: 20.0,
-                          child: Text(
-                            'Sep',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 9,
-                              color: const Color(0xff444444),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(224.08, 0.0),
-                        child: SizedBox(
-                          width: 18.0,
-                          child: Text(
-                            'Oct',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 9,
-                              color: const Color(0xff444444),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(247.5, 0.0),
-                        child: SizedBox(
-                          width: 20.0,
-                          child: Text(
-                            'Nov',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 9,
-                              color: const Color(0xff444444),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(272.25, 0.08),
-                        child: SizedBox(
-                          width: 22.0,
-                          child: Text(
-                            'Dec',
-                            style: TextStyle(
-                              fontFamily: 'Arial',
-                              fontSize: 10,
-                              color: const Color(0xff444444),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(-6.0, -41.0),
-            child:
-                // Adobe XD layer: 'Ring Chart0' (group)
-                Stack(
-              children: <Widget>[
-                Transform.translate(
-                  offset: Offset(113.5, 323.0),
-                  child: SvgPicture.string(
-                    _svg_s34uv,
-                    allowDrawingOutsideViewBox: true,
-                  ),
-                ),
-                Transform.translate(
-                  offset: Offset(146.0, 379.36),
-                  child: SizedBox(
-                    width: 82.0,
-                    child: Text(
-                      '60%',
-                      style: TextStyle(
-                        fontFamily: 'Arial',
-                        fontSize: 33.07500076293945,
-                        color: const Color(0xff1f78b4),
-                      ),
-                      textAlign: TextAlign.center,
+                      ],
                     ),
                   ),
-                ),
-              ],
+                  Transform.translate(
+                    offset: Offset(-172.95, 50.59),
+                    child:
+                    // Adobe XD layer: 'X Axis Line' (group)
+                    Stack(
+                      children: <Widget>[
+                        Transform.translate(
+                          offset: Offset(0.2, -0.09),
+                          child: SvgPicture.string(
+                            _svg_70baay,
+                            allowDrawingOutsideViewBox: true,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Transform.translate(
+                    offset: Offset(-181.0, 55.42),
+                    child:
+                    // Adobe XD layer: 'X Axis' (group)
+                    Stack(
+                      children: <Widget>[
+                        Transform.translate(
+                          offset: Offset(-1.75, 0.08),
+                          child: SizedBox(
+                            width: 20.0,
+                            child: Text(
+                              'Jan',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 10,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(23.03, 0.0),
+                          child: SizedBox(
+                            width: 20.0,
+                            child: Text(
+                              'Feb',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 9,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(48.06, 0.0),
+                          child: SizedBox(
+                            width: 20.0,
+                            child: Text(
+                              'Mar',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 9,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(73.9, 0.0),
+                          child: SizedBox(
+                            width: 18.0,
+                            child: Text(
+                              'Apr',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 9,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(97.32, 0.0),
+                          child: SizedBox(
+                            width: 20.0,
+                            child: Text(
+                              'May',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 8,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(123.15, 0.0),
+                          child: SizedBox(
+                            width: 20.0,
+                            child: Text(
+                              'Jun',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 10,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(149.8, 0.0),
+                          child: SizedBox(
+                            width: 16.0,
+                            child: Text(
+                              'Jul',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 10,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(172.41, 0.0),
+                          child: SizedBox(
+                            width: 20.0,
+                            child: Text(
+                              'Aug',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 9,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(197.44, 0.0),
+                          child: SizedBox(
+                            width: 20.0,
+                            child: Text(
+                              'Sep',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 9,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(224.08, 0.0),
+                          child: SizedBox(
+                            width: 18.0,
+                            child: Text(
+                              'Oct',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 9,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(247.5, 0.0),
+                          child: SizedBox(
+                            width: 20.0,
+                            child: Text(
+                              'Nov',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 9,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Transform.translate(
+                          offset: Offset(272.25, 0.08),
+                          child: SizedBox(
+                            width: 22.0,
+                            child: Text(
+                              'Dec',
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 10,
+                                color: const Color(0xff444444),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
+            Transform.translate(
+              offset: Offset(-6.0, -41.0),
+              child:
+              // Adobe XD layer: 'Ring Chart0' (group)
+              Stack(
+                children: <Widget>[
+                  Transform.translate(
+                    offset: Offset(113.5, 323.0),
+                    child: SvgPicture.string(
+                      _svg_s34uv,
+                      allowDrawingOutsideViewBox: true,
+                    ),
+                  ),
+                  Transform.translate(
+                    offset: Offset(146.0, 379.36),
+                    child: SizedBox(
+                      width: 82.0,
+                      child: Text(
+                        '60%',
+                        style: TextStyle(
+                          fontFamily: 'Arial',
+                          fontSize: 33.07500076293945,
+                          color: const Color(0xff1f78b4),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        bottomNavigationBar: AppBottomNav()
     );
   }
 }
