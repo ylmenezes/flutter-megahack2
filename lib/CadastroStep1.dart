@@ -123,9 +123,9 @@ class CadastroStep1 extends StatelessWidget {
   }
 
   _submit() {
-//    if (!_keyForm.currentState.validate()) {
-//      return;
-//    }
+    if (!_keyForm.currentState.validate()) {
+      return;
+    }
 
     _keyForm.currentState.save();
     Navigator.of(_keyScaffold.currentContext).push(
