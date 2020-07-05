@@ -2,7 +2,7 @@
     package="br.com.yanmenezes.megahack3">
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="megahack3"
+        android:label="Fornce.ai"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
