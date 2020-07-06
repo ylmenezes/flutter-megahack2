@@ -1,18 +1,16 @@
-import 'package:megahack3/model/tipo_cozinha_model.dart';
+import 'package:megahack3/model/cliente_model.dart';
 
-class RestauranteModel {
-  String cnpj;
-  String razaoSocial;
-  String email;
-  String contato;
+class RestauranteModel extends ClienteModel {
   List<String> listaIdTipoCozinha = <String>[];
 
   Map<String, dynamic> toJson() {
     return {
-      'cnpj': cnpj,
-      'razaoSocial': razaoSocial,
       'email': email,
-      'contato': contato,
+      'nomeEmpresa': nomeEmpresa,
+      'cnpj': cnpj,
+      'faturamentoMensal': faturamentoMensal,
+      'nomeProprietario': nomeProprietario,
+      'cpfProprietario': cpfProprietario,
       'idTipoCozinha': listaIdTipoCozinha,
     };
   }

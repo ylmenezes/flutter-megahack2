@@ -21,7 +21,7 @@ class Sucesso extends StatelessWidget {
             SizedBox(
               width: 343.0,
               child: Text(
-                'Parabéns!Agora você é um fornecedor',
+                'Parabéns!Agora você é um restaurante',
                 style: TextStyle(
                   fontFamily: 'Segoe Print',
                   fontSize: 20,

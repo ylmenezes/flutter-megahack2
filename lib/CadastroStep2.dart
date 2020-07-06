@@ -7,8 +7,6 @@ import 'package:megahack3/util/globais.dart';
 import 'package:megahack3/widget/popup.dart';
 import 'package:provider/provider.dart';
 
-import 'dao/restaurante_dao.dart';
-
 class CadastroStep2 extends StatefulWidget {
   @override
   _CadastroStep2State createState() => _CadastroStep2State();
@@ -50,7 +48,7 @@ class _CadastroStep2State extends State<CadastroStep2> {
             child: ListView.builder(
               itemCount: _tiposCozinha.length,
               itemBuilder: (context, index) {
-                return criarCheckbox(_tiposCozinha[index].nome);
+                return _criarCheckbox(_tiposCozinha[index].nome);
               },
             ),
           ),
@@ -76,7 +74,7 @@ class _CadastroStep2State extends State<CadastroStep2> {
     );
   }
 
-  CheckboxListTile criarCheckbox(String index) {
+  CheckboxListTile _criarCheckbox(String index) {
     return CheckboxListTile(
       controlAffinity: ListTileControlAffinity.leading,
       title: Text(index),
@@ -96,7 +94,7 @@ class _CadastroStep2State extends State<CadastroStep2> {
       return;
     }
 
-    //limpa as cozinhas selecionados caso o usuario volte da tela seguinte
+    //limpa as cozinhas selecionadas caso o usuario volte da tela seguinte
     _restaurante.listaIdTipoCozinha.clear();
 
     _values.forEach((key, value) {
@@ -107,7 +105,6 @@ class _CadastroStep2State extends State<CadastroStep2> {
       }
     });
 
-    new RestauranteDao().create(_restaurante);
     Navigator.of(_keyScaffold.currentContext).push(
       MaterialPageRoute(
         builder: (_) => CadastroStep3(),

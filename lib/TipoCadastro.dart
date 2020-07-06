@@ -1,15 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/page_link.dart';
-import './CadastroStep1.dart';
+import 'package:megahack3/CadastroStep1.dart';
 
 class TipoCadastro extends StatelessWidget {
+  final _keyScaffold = GlobalKey<ScaffoldState>();
   TipoCadastro({
     Key key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _keyScaffold,
       body: Container(
         padding: EdgeInsets.all(20.0),
         child: Column(
@@ -26,72 +27,45 @@ class TipoCadastro extends StatelessWidget {
               ),
               textAlign: TextAlign.left,
             ),
-            Container(
-              margin: EdgeInsets.only(top: 30.0),
-              height: 50.0,
-              width: MediaQuery.of(context).size.width,
-              color: Colors.amber,
-              child: PageLink(
-                links: [
-                  PageLinkInfo(
-                    transition: LinkTransition.Fade,
-                    ease: Curves.easeOut,
-                    duration: 0.3,
-                    pageBuilder: () => CadastroStep1(),
-                  ),
-                ],
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Text(
-                      'Restaurante',
-                      style: TextStyle(
-                        fontFamily: 'Segoe Print',
-                        fontSize: 20,
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w700,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+            SizedBox(height: 10),
+            _criarBotao(
+              'Restaurante',
+              () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => CadastroStep1(),
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(top: 10.0),
-              height: 50.0,
-              width: MediaQuery.of(context).size.width,
-              color: Colors.amber,
-              child: PageLink(
-                links: [
-                  PageLinkInfo(
-                    transition: LinkTransition.Fade,
-                    ease: Curves.easeOut,
-                    duration: 0.3,
-                    pageBuilder: () => CadastroStep1(),
-                  ),
-                ],
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Text(
-                      'Fornecedor',
-                      style: TextStyle(
-                        fontFamily: 'Segoe Print',
-                        fontSize: 20,
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w700,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+            SizedBox(height: 10),
+            _criarBotao(
+              'Fornecedor',
+              () => _keyScaffold.currentState.showSnackBar(
+                SnackBar(
+                  content: Text('Não implementado'),
                 ),
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  MaterialButton _criarBotao(String texto, Function onPressed) {
+    return MaterialButton(
+      onPressed: onPressed,
+      color: Colors.amber,
+      height: 50.0,
+      elevation: 2.0,
+      child: Text(
+        texto,
+        style: TextStyle(
+          fontFamily: 'Segoe Print',
+          fontSize: 20,
+          color: Colors.black87,
+          fontWeight: FontWeight.w700,
+        ),
+        textAlign: TextAlign.center,
       ),
     );
   }

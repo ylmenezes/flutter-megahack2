@@ -1,64 +1,57 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/page_link.dart';
+import 'package:flutter/services.dart';
 import 'package:megahack3/Sucesso.dart';
+import 'package:megahack3/dao/restaurante_dao.dart';
+import 'package:megahack3/model/restaurante_model.dart';
 
-class CadastroStep3 extends StatelessWidget {
+class CadastroStep3 extends StatefulWidget {
+  @override
+  _CadastroStep3State createState() => _CadastroStep3State();
+}
+
+class _CadastroStep3State extends State<CadastroStep3> {
+  final _keyScaffold = GlobalKey<ScaffoldState>();
   final checkBoxValue = true;
+
+  RestauranteModel _restaurante;
 
   @override
   Widget build(BuildContext context) {
+    final Map<String, dynamic> args = ModalRoute.of(context).settings.arguments;
+    _restaurante = args['restaurante'];
+
     return Scaffold(
+      key: _keyScaffold,
       backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
-        title: Text('Você prefere...'),
+        title: Text('Prioridades'),
         backgroundColor: Colors.amber,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
-            Row(children: <Widget>[
-              Checkbox(
-                value: checkBoxValue,
-                activeColor: Colors.green,
-                onChanged: null,
+            Text(
+              'Selecione suas prioridades de 1 a 5 em uma compra, sendo 1 a mais importe e 5 a menos importante:',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
               ),
-              Text('Forncedores que atendam no prazo'),
-            ]),
-            Row(children: <Widget>[
-              Checkbox(
-                value: checkBoxValue,
-                activeColor: Colors.green,
-                onChanged: null,
-              ),
-              Text('Qualidade no produto do fornecedor'),
-            ]),
-            Row(children: <Widget>[
-              Checkbox(
-                value: checkBoxValue,
-                activeColor: Colors.green,
-                onChanged: null,
-              ),
-              Text('Fornecedor com atendimento de excelência'),
-            ]),
-            Row(children: <Widget>[
-              Checkbox(
-                value: checkBoxValue,
-                activeColor: Colors.green,
-                onChanged: null,
-              ),
-              Text('Melhor preço do mercado'),
-            ]),
-            PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.Fade,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => Sucesso(),
-                ),
-              ],
+            ),
+            SizedBox(height: 10),
+            criarListTile('Prazo'),
+            SizedBox(height: 10),
+            criarListTile('Atendimento'),
+            SizedBox(height: 10),
+            criarListTile('Qualidade'),
+            SizedBox(height: 10),
+            criarListTile('Preço'),
+            SizedBox(height: 10),
+            criarListTile('Condições de pagamento'),
+            SizedBox(height: 20),
+            GestureDetector(
+              onTap: _submit,
               child: Container(
                 alignment: Alignment.center,
                 width: 320.0,
@@ -75,6 +68,35 @@ class CadastroStep3 extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  ListTile criarListTile(String texto) {
+    return ListTile(
+      onTap: null,
+      leading: Container(
+        width: 55,
+        child: TextField(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+          ),
+          keyboardType: TextInputType.number,
+          inputFormatters: [
+            WhitelistingTextInputFormatter(RegExp(r'[12345]')),
+            LengthLimitingTextInputFormatter(1),
+          ],
+        ),
+      ),
+      title: Text(texto),
+    );
+  }
+
+  _submit() {
+    RestauranteDao().create(_restaurante);
+    Navigator.of(_keyScaffold.currentContext).push(
+      MaterialPageRoute(
+        builder: (_) => Sucesso(),
       ),
     );
   }

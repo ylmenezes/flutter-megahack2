@@ -10,7 +10,7 @@ class TipoCozinhaModel {
   });
 
   factory TipoCozinhaModel.fromFirestore(DocumentSnapshot doc) {
-    Map data = doc.data;
+    final data = doc.data;
 
     return TipoCozinhaModel(
       id: doc.documentID,

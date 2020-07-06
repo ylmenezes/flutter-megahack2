@@ -28,7 +28,6 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: <Widget>[
-
         Opacity(
           opacity: 0.2,
           child: Container(
@@ -42,13 +41,17 @@ class _LoginState extends State<Login> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(top:50.0),
+          padding: EdgeInsets.only(top: 50.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [ Image.asset('assets/image/logo.png', height: 250,) ],
+            children: [
+              Image.asset(
+                'assets/image/logo.png',
+                height: 250,
+              )
+            ],
           ),
         ),
-        
         Positioned(
           bottom: 0,
           left: 0,
